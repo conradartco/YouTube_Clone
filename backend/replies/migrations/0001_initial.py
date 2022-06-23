@@ -10,18 +10,17 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
+        ('comments', '0001_initial'),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Comment',
+            name='Reply',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('video_id', models.CharField(max_length=255)),
                 ('text', models.CharField(max_length=255)),
-                ('likes', models.IntegerField()),
-                ('dislikes', models.IntegerField()),
+                ('comment', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='comments.comment')),
                 ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
         ),
