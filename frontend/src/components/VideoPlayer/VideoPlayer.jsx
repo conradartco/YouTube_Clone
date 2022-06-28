@@ -1,19 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 
-const VideoPlayer = () => {
-
-    const {mediaSelection, setMediaSelection} = useState([])
+const VideoPlayer = (props) => {
     
-    useEffect(() => {
-
-    }, [])
 
     return (
         <div>
-            <iframe id="ytplayer" type="text/html" width="640" height="360"
-            src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com"
-            frameborder="0"></iframe>
+            {props.videoContent.map((video, index) => {
+                return (
+                    <iframe key={index} id="ytplayer" type="text/html" width="640" height="360"
+                    src={"https://www.youtube.com/embed/" + (video.id.videoId)} frameBorder="0"></iframe>
+                );
+            })}
         </div>
     );
 }
