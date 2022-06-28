@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { googleAPIKey } from "../../keys";
 import SearchBar from "../../components/SearchBar/SearchBar";
-import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
+// import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
+import VideoObject from "../../components/VideoObject/VideoObject";
 
 const HomePage = () => {
   // The "user" value from this Hook contains the decoded logged in user information (username, first name, id)
@@ -13,6 +14,7 @@ const HomePage = () => {
   // const [user, token] = useAuth();
   // const [cars, setCars] = useState([]);
   const [videos, setVideos] = useState([]);
+
 
   // useEffect(() => {
   //   const fetchCars = async () => {
@@ -33,7 +35,7 @@ const HomePage = () => {
   useEffect(() => {
     const fetchVideos = async () => {
       try {
-        let response = await axios.get("https://www.googleapis.com/youtube/v3/search?q=cats" + "&key" + googleAPIKey + "&part=snippet");
+        let response = await axios.get("https://www.googleapis.com/youtube/v3/search?q=cats" + "&key=" + googleAPIKey + "&part=snippet");
         setVideos(response.data.items)
       } catch (error) {
         console.log(error.response.data)
@@ -58,7 +60,7 @@ const HomePage = () => {
         <SearchBar searchQueryData={searchFilter}/>
       </div>
       <div>
-        <VideoPlayer videoContent={videos}/>
+        <VideoObject videoContent={videos}/>
       </div>
     </div>
   );

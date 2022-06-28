@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const VideoPlayer = (props) => {
+const VideoObject = (props) => {
     
 
     return (
@@ -9,9 +9,8 @@ const VideoPlayer = (props) => {
             {props.videoContent.map((video, index) => {
                 return (
                     <div key={index}>
-                        <iframe id="ytplayer" type="text/html" width="640" height="360"
-                        src={"https://www.youtube.com/embed/" + (video.id.videoId)} frameBorder="0"></iframe>
                         <h2>{video.snippet.title}</h2>
+                        <img src={video.snippet.thumbnails.medium.url}/>
                         <p>{video.snippet.description}</p>
                     </div>
                 );
@@ -20,4 +19,4 @@ const VideoPlayer = (props) => {
     );
 }
 
-export default VideoPlayer;
+export default VideoObject;
