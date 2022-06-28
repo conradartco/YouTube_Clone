@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 // import useAuth from "../../hooks/useAuth";
 import axios from "axios";
+import { googleAPIKey } from "../../keys";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 
@@ -32,7 +33,7 @@ const HomePage = () => {
   useEffect(() => {
     const fetchVideos = async () => {
       try {
-        let response = await axios.get("https://www.googleapis.com/youtube/v3/search?q=cats&key=AIzaSyDoFitFUHwXDh-_6tbPgiwIODS3yKQsmpo&part=snippet");
+        let response = await axios.get("https://www.googleapis.com/youtube/v3/search?q=cats" + "&key" + googleAPIKey + "&part=snippet");
         setVideos(response.data.items)
       } catch (error) {
         console.log(error.response.data)
@@ -43,7 +44,7 @@ const HomePage = () => {
 
   async function searchFilter(query){
     try {
-      let response = await axios.get("https://www.googleapis.com/youtube/v3/search?q=" + query + "&key=AIzaSyDoFitFUHwXDh-_6tbPgiwIODS3yKQsmpo")
+      let response = await axios.get("https://www.googleapis.com/youtube/v3/search?q=" + query + "&key=" + googleAPIKey)
       setVideos(response.data.items)
     } catch (error) {
       console.log(error.response.data)
