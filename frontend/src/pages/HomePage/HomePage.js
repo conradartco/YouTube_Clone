@@ -45,7 +45,7 @@ const HomePage = (props) => {
 
   async function searchFilter(query){
     try {
-      let response = await axios.get("https://www.googleapis.com/youtube/v3/search?q=" + query + "&key=" + googleAPIKey + "&part=snippet")
+      let response = await axios.get("https://www.googleapis.com/youtube/v3/search?q=" + query + "&key=" + googleAPIKey + "&part=snippet");
       console.log('response from searchFilter: ', response.data.items)
       setVideos(response.data.items)
     } catch (error) {

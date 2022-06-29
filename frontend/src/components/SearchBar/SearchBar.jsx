@@ -17,7 +17,7 @@ const SearchBar = (props) => {
                 <input type='str' value={searchQuery} placeholder='Search...' onChange={(event) => setSearchQuery(event.target.value)}/>
             </div>
             <div>
-                <button type='submit'></button>
+                <button type='submit'>GO!</button>
             </div>
         </form>
     )

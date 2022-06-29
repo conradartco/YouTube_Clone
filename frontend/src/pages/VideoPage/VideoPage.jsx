@@ -4,6 +4,7 @@ import axios from 'axios';
 import { googleAPIKey } from '../../keys';
 import VideoPlayer from '../../components/VideoPlayer/VideoPlayer';
 import RelatedVideos from '../../components/RelatedVideos/RelatedVideos';
+import CommentList from '../../components/Comments/CommentList';
 
 const VideoPage = (props) => {
     //pass videoId into VideoPlayer
@@ -27,11 +28,14 @@ const VideoPage = (props) => {
         <div>
             <div>
                 {console.log('videoId in VideoPage', videoId)}
-                <VideoPlayer videoSelect={videoId}/>
+                <VideoPlayer videoSelect={videoId} videoInfo={props.videoSelect}/>
             </div>
             <div>
                 {console.log('videos related in VideoPage', video)}
                 <RelatedVideos relatedToSelect={video} newVideoSelect={props.newVideoSelect} />
+            </div>
+            <div>
+                <CommentList videoInfo={videoId}/>
             </div>
         </div>
     )
