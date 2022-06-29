@@ -7,7 +7,7 @@ import SearchBar from "../../components/SearchBar/SearchBar";
 // import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 import VideoObject from "../../components/VideoObject/VideoObject";
 
-const HomePage = () => {
+const HomePage = (props) => {
   // The "user" value from this Hook contains the decoded logged in user information (username, first name, id)
   // The "token" value is the JWT token that you will send in the header of any request requiring authentication
 
@@ -35,7 +35,7 @@ const HomePage = () => {
   useEffect(() => {
     const fetchVideos = async () => {
       try {
-        let response = await axios.get("https://www.googleapis.com/youtube/v3/search?q=cats" + "&key=" + googleAPIKey + "&part=snippet");
+        let response = await axios.get("https://www.googleapis.com/youtube/v3/search?q=broadcity" + "&key=" + googleAPIKey + "&part=snippet");
         setVideos(response.data.items)
       } catch (error) {
         console.log(error.response.data)
@@ -60,7 +60,7 @@ const HomePage = () => {
         <SearchBar searchQueryData={searchFilter}/>
       </div>
       <div>
-        <VideoObject videoContent={videos}/>
+        <VideoObject videoContent={videos} videoSelect={props.videoSelect}/>
       </div>
     </div>
   );
