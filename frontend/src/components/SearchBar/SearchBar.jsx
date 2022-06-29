@@ -7,7 +7,7 @@ const SearchBar = (props) => {
     function handleSubmit(event) {
         event.preventDefault();
         let mySearchQuery = searchQuery.toLocaleLowerCase();
-        console.log(mySearchQuery);
+        console.log('SearchBar handleSubmit value: ', mySearchQuery);
         props.searchQueryData(mySearchQuery);
     }
 

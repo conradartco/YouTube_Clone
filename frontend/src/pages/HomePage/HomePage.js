@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { googleAPIKey } from "../../keys";
 import SearchBar from "../../components/SearchBar/SearchBar";
-// import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 import VideoObject from "../../components/VideoObject/VideoObject";
 
 const HomePage = (props) => {
@@ -46,16 +45,16 @@ const HomePage = (props) => {
 
   async function searchFilter(query){
     try {
-      let response = await axios.get("https://www.googleapis.com/youtube/v3/search?q=" + query + "&key=" + googleAPIKey)
+      let response = await axios.get("https://www.googleapis.com/youtube/v3/search?q=" + query + "&key=" + googleAPIKey + "&part=snippet")
+      console.log('response from searchFilter: ', response.data.items)
       setVideos(response.data.items)
     } catch (error) {
-      console.log(error.response.data)
+      console.log('error in searchFilter', error.response.data)
     }
   }
 
   return (
     <div className="container">
-      {console.log(videos)}
       <div>
         <SearchBar searchQueryData={searchFilter}/>
       </div>

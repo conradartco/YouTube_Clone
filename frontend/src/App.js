@@ -19,7 +19,7 @@ import PrivateRoute from "./utils/PrivateRoute";
 
 function App() {
 
-  const [video, setVideo] = useState(undefined);
+  const [video, setVideo] = useState([]);
   
   
   return (
@@ -29,7 +29,7 @@ function App() {
         <Route path="/" element={<HomePage videoSelect={setVideo}/>} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/video/:videoId/" element={<VideoPage videoSelect={video}/>} />
+        <Route path="/video/:videoId/" element={<VideoPage videoSelect={video} newVideoSelect={setVideo}/>} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

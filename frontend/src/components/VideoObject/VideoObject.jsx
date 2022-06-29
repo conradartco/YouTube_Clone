@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const VideoObject = (props) => {
@@ -16,7 +16,8 @@ const VideoObject = (props) => {
     return (
         <div>
             {props.videoContent.map((video, index) => {
-                return (
+                if(video.snippet) {
+                    return (
                     <div key={index}>
                         <h2>{video.snippet.title}</h2>
                         <img src={video.snippet.thumbnails.medium.url}/>
@@ -25,6 +26,8 @@ const VideoObject = (props) => {
                         <button type="submit" onClick={() => handleClick(video)}>Watch</button>
                     </div>
                 );
+                }
+                
             })}
         </div>
     );
