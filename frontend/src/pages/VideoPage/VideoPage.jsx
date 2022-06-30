@@ -7,6 +7,7 @@ import VideoPlayer from '../../components/VideoPlayer/VideoPlayer';
 import RelatedVideos from '../../components/RelatedVideos/RelatedVideos';
 import CommentList from '../../components/Comments/CommentList';
 import CommentForm from '../../components/Comments/CommentForm';
+import './VideoPage.css';
 
 const VideoPage = (props) => {
     //pass videoId into VideoPlayer
@@ -43,17 +44,25 @@ const VideoPage = (props) => {
 
 
     return (
-        <div>
-            <div>
+        <div className='video-page'>
+            <div className='video-player'>
                 <VideoPlayer videoSelect={videoId} videoInfo={props.videoSelect}/>
             </div>
             <div>
+                <h2>Comments</h2>
+                <hr></hr>
+            </div>
+            <div className='comment-list'>
                 <CommentList videoInfo={videoId} reRender={reRender}/>
             </div>
-            <div>
+            <div className='comment-form'>
                 <CommentForm videoInfo={videoId} addNewComment={addNewComment}/>
             </div>
             <div>
+                <h2>Related Videos</h2>
+                <hr></hr>
+            </div>
+            <div className='related-videos'>
                 <RelatedVideos relatedToSelect={video} newVideoSelect={props.newVideoSelect} />
             </div>
         </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import './RelatedVideos.css';
 
 const RelatedVideos = (props) => {
 
@@ -13,11 +14,11 @@ const RelatedVideos = (props) => {
     }
 
     return (
-        <div>
+        <div className='related-object'>
             {props.relatedToSelect.map((video, index) => {
                 if(video.snippet) {
                     return (
-                    <div key={index}>
+                    <div key={index} className='related-container'>
                         <h2>{video.snippet.title}</h2>
                         <img src={video.snippet.thumbnails.medium.url}/>
                         <p>{video.snippet.description}</p>
