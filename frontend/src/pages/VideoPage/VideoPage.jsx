@@ -31,11 +31,14 @@ const VideoPage = (props) => {
                 <VideoPlayer videoSelect={videoId} videoInfo={props.videoSelect}/>
             </div>
             <div>
+                <CommentList videoInfo={videoId}/>
+            </div>
+            <div>
                 {console.log('videos related in VideoPage', video)}
                 <RelatedVideos relatedToSelect={video} newVideoSelect={props.newVideoSelect} />
             </div>
             <div>
-                <CommentList videoInfo={videoId}/>
+                
             </div>
         </div>
     )

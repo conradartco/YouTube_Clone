@@ -22,9 +22,6 @@ const RelatedVideos = (props) => {
                         <h2>{video.snippet.title}</h2>
                         <img src={video.snippet.thumbnails.medium.url}/>
                         <p>{video.snippet.description}</p>
-                        {console.log('video in relatedVideos map', video)}
-                        {console.log('video.snippet in relatedVideos map', video.snippet)}
-                        {console.log('video.snippet.title in relatedVideos map', video.snippet.title)}
                         <button type="submit" onClick={() => handleClick(video)}>Watch</button>
                     </div>
                 );

@@ -9,7 +9,7 @@ const CommentList = (props) => {
     useEffect(() => {
         const fetchComments = async () => {
           try {
-            let response = await axios.get("http://127.0.0.1:8000/api/comments/video/" + props.videoInfo);
+            let response = await axios.get("http://127.0.0.1:8000/api/comments/video/" + props.videoInfo + '/');
             setComments(response.data)
           } catch (error) {
             console.log(error.response.data)
