@@ -16,7 +16,7 @@ const CommentList = (props) => {
           }
         }
         fetchComments();
-      }, []);
+      }, [props.reRender]);
 
     return (
         <div>

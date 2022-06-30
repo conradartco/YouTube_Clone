@@ -8,7 +8,6 @@ const RelatedVideos = (props) => {
     function handleClick(video) {
         //below, pass in whole object in map
         //once object gets in here, pass object to videoSelect, but only use videoID with navigate
-        console.log('video in handleClick', video)
         props.newVideoSelect(video)
         navigate('/video/' + video.id.videoId)
     }
