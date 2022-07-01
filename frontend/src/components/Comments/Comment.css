@@ -11,3 +11,19 @@
 .comment-rule {
     border-style: ridge;
 }
+
+.input-comment{
+    padding: 10px;
+    border-width: thin;
+    border-radius: 5px;
+    width: 500px;
+    margin-right: 0.5em;
+}
+
+
+.button-comment{
+    height: 40px;
+    width: 100px;
+    border-radius: 5px;
+    margin-top: 10px;
+}

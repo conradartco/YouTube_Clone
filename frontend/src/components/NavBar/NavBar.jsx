@@ -9,7 +9,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   return (
     <div className="navBar">
-      <ul>
+      <ul className="nav-contents">
         <li className="brand">
           <Link to="/" style={{ textDecoration: "none", color: "white" }}>
             <b>U-Tube</b>

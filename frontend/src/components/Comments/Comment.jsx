@@ -7,8 +7,8 @@ const Comment = (props) => {
             {props.commentContent.map((comment, index) => {
                 if(comment) {
                     return (
-                        <div className='comment-wrapper'>
-                            <div key={index} className='comment-text'>
+                        <div key={index} className='comment-wrapper'>
+                            <div className='comment-text'>
                                 <p>{comment.text}</p>
                             </div>
                             <div className='comment-break'>

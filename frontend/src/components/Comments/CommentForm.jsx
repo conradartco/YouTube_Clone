@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Comment.css';
 
 const CommentForm = (props) => {
      
@@ -17,10 +18,10 @@ const CommentForm = (props) => {
         <div>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <input type="text" value={text} placeholder="Add a Comment" onChange={(event) => setText(event.target.value)}/>
+                    <input type="text" value={text} className="input-comment" placeholder="Add a Comment" onChange={(event) => setText(event.target.value)}/>
                 </div>
                 <div>
-                    <button type="submit" >Add Comment</button>
+                    <button type="submit" className="button-comment">Add</button>
                 </div>
             </form>
         </div>

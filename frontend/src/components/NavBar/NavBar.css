@@ -2,6 +2,7 @@ ul {
   display: flex;
   justify-content: space-between;
   list-style-type: none;
+  align-items: center;
 }
 
 li {
@@ -14,6 +15,7 @@ li {
   color: white;
   margin-bottom: 2rem;
   padding: 1.5rem 2rem;
+  text-align: -webkit-center;
 }
 
 .navBar button {
@@ -32,4 +34,8 @@ li {
 .brand {
   cursor: pointer;
   font-size: 2rem;
+}
+
+.nav-contents {
+  width: 1200px;
 }

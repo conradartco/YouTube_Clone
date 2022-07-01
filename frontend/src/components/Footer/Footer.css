@@ -3,7 +3,9 @@ footer {
   font-size: 12px;
   left: 0;
   padding: 1rem;
-  margin-top: 2rem;
+  margin-top: 10rem;
   text-align: center;
   width: 100%;
+  display: grid;
+  justify-items: center;
 }

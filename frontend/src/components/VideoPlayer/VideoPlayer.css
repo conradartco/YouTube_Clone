@@ -1,0 +1,5 @@
+.video-player-body  {
+    text-overflow: ellipsis;
+    overflow: visible;
+    white-space: pre-line;
+}
