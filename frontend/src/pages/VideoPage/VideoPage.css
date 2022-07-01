@@ -1,22 +1,37 @@
 .video-player{
-    width: 800px;
+    width: 640px;;
     margin-bottom: 2em;
     margin-top: 1em;
-    margin-left: 1em;
 }
 
 .comment-list{
-    margin-left: 1em;
+    border: 1px;
 }
 
 .comment-form{
     font-size: medium;
 }
 
-.related-videos{
+/* .related-videos{
     margin: 1em;
+} */
+
+.top-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;;
 }
 
-.video-page{
-    margin: 2em;
+.bottom-flex {
+    width: 1215px;
+}
+
+.top-flex-r {
+    margin-left: 50px
+}
+
+.video-page {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }

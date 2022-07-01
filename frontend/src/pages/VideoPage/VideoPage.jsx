@@ -45,25 +45,33 @@ const VideoPage = (props) => {
 
     return (
         <div className='video-page'>
-            <div className='video-player'>
-                <VideoPlayer videoSelect={videoId} videoInfo={props.videoSelect}/>
+            <div className='top-flex'>
+                <div className='video-player'>
+                    <VideoPlayer videoSelect={videoId} videoInfo={props.videoSelect}/>
+                </div>
+                <div className='top-flex-r'>
+                    <div>
+                    <h2>Related Content</h2>
+                    <hr></hr>
+                </div>
+                <div className='related-videos'>
+                    <RelatedVideos relatedToSelect={video} newVideoSelect={props.newVideoSelect} />
+                </div>
+                </div>
             </div>
-            <div>
-                <h2>Comments</h2>
-                <hr></hr>
-            </div>
-            <div className='comment-list'>
-                <CommentList videoInfo={videoId} reRender={reRender}/>
-            </div>
-            <div className='comment-form'>
-                <CommentForm videoInfo={videoId} addNewComment={addNewComment}/>
-            </div>
-            <div>
-                <h2>Related Videos</h2>
-                <hr></hr>
-            </div>
-            <div className='related-videos'>
-                <RelatedVideos relatedToSelect={video} newVideoSelect={props.newVideoSelect} />
+            <div className='bottom-flex'>
+                <div>
+                    <div>
+                        <h2>Comments</h2>
+                        <hr></hr>
+                    </div>
+                    <div className='comment-list'>
+                        <CommentList videoInfo={videoId} reRender={reRender}/>
+                    </div>
+                    <div className='comment-form'>
+                        <CommentForm videoInfo={videoId} addNewComment={addNewComment}/>
+                    </div>
+                </div>
             </div>
         </div>
     )
