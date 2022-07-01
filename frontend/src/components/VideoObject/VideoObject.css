@@ -1,3 +1,53 @@
 .video-object-display{
     padding: 10px;
+    display: inline-block;
+    width: 346px;
+    justify-content: center;
+}
+
+.video-header{
+    width: 320px;
+}
+
+.video-body{
+    width: 320px;
+    height: 80px;
+}
+
+h2 {
+    font-size: medium;
+    font-family: sans-serif;
+    text-align: left;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-weight: 900;
+    margin-top: 0.5em;
+    margin-bottom: 0.25em;
+}
+
+p {
+    font-size: 14px;
+    text-align: left;
+    line-height: 18px;
+}
+
+.video-button {
+    max-width: 320px;
+    width: 320px;
+    border-radius: 5px;
+}
+
+.video-display-container {
+    display: flex;
+    width: 1040px;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: center;
+}
+
+.video-object-thumb {
+    width: 320px;
+    height: 180px;
+    object-fit: cover;;
 }

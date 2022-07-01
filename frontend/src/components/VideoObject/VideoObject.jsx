@@ -15,22 +15,22 @@ const VideoObject = (props) => {
     }
 
     return (
-        <div>
+        <div className='video-display-container'>
             {props.videoContent.map((video, index) => {
                 if(video.snippet) {
                     return (
                     <div key={index} className='video-object-display'>
                         <div>
-                           <img src={video.snippet.thumbnails.medium.url}/>
+                           <img className='video-object-thumb' src={video.snippet.thumbnails.medium.url}/>
                         </div>
-                        <div>
+                        <div className='video-header'>
                              <h2>{video.snippet.title}</h2>
                         </div>
-                        <div>
+                        <div className='video-body'>
                             <p>{video.snippet.description}</p>
                         </div>
                         <div>
-                            <button type="submit" onClick={() => handleClick(video)}>Watch</button>
+                            <button type="submit" className='video-button' onClick={() => handleClick(video)}>Watch</button>
                         </div>
                     </div>
                 );
