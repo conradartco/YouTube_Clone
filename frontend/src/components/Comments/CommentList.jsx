@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Comment from './Comment';
+import './Comment.css';
 
 const CommentList = (props) => {
 
@@ -19,7 +20,7 @@ const CommentList = (props) => {
       }, [props.reRender]);
 
     return (
-        <div>
+        <div className='comment-list'>
             <Comment commentContent={comments}/>
         </div>
     );

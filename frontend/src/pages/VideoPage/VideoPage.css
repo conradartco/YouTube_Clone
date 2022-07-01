@@ -6,7 +6,7 @@
 }
 
 .comment-list{
-    font-size: smaller;
+    margin-left: 1em;
 }
 
 .comment-form{
@@ -15,4 +15,8 @@
 
 .related-videos{
     margin: 1em;
+}
+
+.video-page{
+    margin: 2em;
 }

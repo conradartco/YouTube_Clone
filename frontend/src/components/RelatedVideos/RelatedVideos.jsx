@@ -19,10 +19,16 @@ const RelatedVideos = (props) => {
                 if(video.snippet) {
                     return (
                     <div key={index} className='related-container'>
-                        <h2>{video.snippet.title}</h2>
-                        <img src={video.snippet.thumbnails.medium.url}/>
+                        <div>
+                            <h2>{video.snippet.title}</h2>
+                        </div>
+                        <div>
+                             <img src={video.snippet.thumbnails.medium.url}/>
+                        </div>
+
                         <p>{video.snippet.description}</p>
                         <button type="submit" onClick={() => handleClick(video)}>Watch</button>
+                        <hr></hr>
                     </div>
                 );
                 }
