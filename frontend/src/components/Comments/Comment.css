@@ -1,0 +1,13 @@
+.comment-text {
+    margin-top: 10px;
+    margin-bottom: 8px;
+}
+
+.comment-break {
+    margin-bottom: 4px;
+    width: 500px;
+}
+
+.comment-rule {
+    border-style: ridge;
+}

@@ -1,3 +1,4 @@
+import './Comment.css';
 
 const Comment = (props) => {
 
@@ -6,9 +7,13 @@ const Comment = (props) => {
             {props.commentContent.map((comment, index) => {
                 if(comment) {
                     return (
-                        <div key={index}>
-                            <p>{comment.user}</p>
-                            <p>{comment.text}</p>
+                        <div className='comment-wrapper'>
+                            <div key={index} className='comment-text'>
+                                <p>{comment.text}</p>
+                            </div>
+                            <div className='comment-break'>
+                                <hr className='comment-rule'></hr>
+                            </div>
                         </div>
                     )
                 }

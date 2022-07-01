@@ -5,11 +5,14 @@
 }
 
 .comment-list{
-    border: 1px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .comment-form{
-    font-size: medium;
+    display: flex;
+    justify-content: left;
+    align-items: left;
 }
 
 /* .related-videos{
@@ -27,7 +30,8 @@
 }
 
 .top-flex-r {
-    margin-left: 50px
+    margin-left: 50px;
+    height: 360px;
 }
 
 .video-page {
