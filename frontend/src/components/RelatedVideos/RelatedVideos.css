@@ -1,6 +1,30 @@
-.related-container{
-    margin-bottom: 2em;
-    max-width: 800px;
-    border: 1px gray;
+.related-video-display{
     padding: 10px;
+    display: flex;
+    width: 525px;
+    height: 130px;
+}
+
+.related-thumb {
+    width: 160px;
+    height: 90px;
+    object-fit: cover;
+    margin-right: 16px;
+}
+
+.related-header {
+    width: 300px;
+}
+
+.related-button {
+    height: 45px;
+    max-width: 300px;
+    width: 300px;
+    border-radius: 5px;
+}
+
+.related-flex-right {
+    width: 300px;
+    display: flex;
+    flex-wrap: wrap;
 }

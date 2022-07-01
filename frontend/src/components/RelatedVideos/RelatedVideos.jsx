@@ -18,17 +18,18 @@ const RelatedVideos = (props) => {
             {props.relatedToSelect.map((video, index) => {
                 if(video.snippet) {
                     return (
-                    <div key={index} className='related-container'>
+                    <div key={index} className='related-video-display'>
                         <div>
-                            <h2>{video.snippet.title}</h2>
+                            <img className='related-thumb' src={video.snippet.thumbnails.medium.url}/>
                         </div>
-                        <div>
-                             <img src={video.snippet.thumbnails.medium.url}/>
+                        <div className='related-flex-right'>
+                            <div className='related-header'>
+                                <h2>{video.snippet.title}</h2>
+                            </div>
+                            <div>
+                                <button type="submit" className='related-button' onClick={() => handleClick(video)}>Watch</button>
+                            </div>
                         </div>
-
-                        <p>{video.snippet.description}</p>
-                        <button type="submit" onClick={() => handleClick(video)}>Watch</button>
-                        <hr></hr>
                     </div>
                 );
                 }

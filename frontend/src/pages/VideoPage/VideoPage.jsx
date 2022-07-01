@@ -20,7 +20,7 @@ const VideoPage = (props) => {
     useEffect(() => {
         const fetchVideos = async () => {
           try {
-            let response = await axios.get("https://www.googleapis.com/youtube/v3/search?relatedToVideoId=" + videoId + "&type=video&key=" + googleAPIKey + "&part=snippet");
+            let response = await axios.get("https://www.googleapis.com/youtube/v3/search?maxResults=3&relatedToVideoId=" + videoId + "&type=video&key=" + googleAPIKey + "&part=snippet");
             setVideo(response.data.items)
           } catch (error) {
             console.log(error.response.data)
