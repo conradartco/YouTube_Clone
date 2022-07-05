@@ -34,7 +34,7 @@ const HomePage = (props) => {
   useEffect(() => {
     const fetchVideos = async () => {
       try {
-        let response = await axios.get("https://www.googleapis.com/youtube/v3/search?maxResults=6&q=broadcity" + "&key=" + googleAPIKey + "&part=snippet");
+        let response = await axios.get("https://www.googleapis.com/youtube/v3/search?maxResults=6&q=strangerthings" + "&key=" + googleAPIKey + "&part=snippet");
         setVideos(response.data.items)
       } catch (error) {
         console.log(error.response.data)
@@ -45,7 +45,7 @@ const HomePage = (props) => {
 
   async function searchFilter(query){
     try {
-      let response = await axios.get("https://www.googleapis.com/youtube/v3/search?q=" + query + "&key=" + googleAPIKey + "&part=snippet");
+      let response = await axios.get("https://www.googleapis.com/youtube/v3/search?maxResults=6&q=" + query + "&key=" + googleAPIKey + "&part=snippet");
       setVideos(response.data.items)
     } catch (error) {
       console.log('error in searchFilter', error.response.data)

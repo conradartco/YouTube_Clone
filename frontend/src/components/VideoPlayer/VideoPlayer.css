@@ -1,5 +1,8 @@
 .video-player-body  {
-    text-overflow: ellipsis;
-    overflow: visible;
+    text-overflow: clip;
+    overflow: auto;
     white-space: pre-line;
+    height: inherit;
+    max-height: 220px;
+    margin-top: 1.5em;
 }

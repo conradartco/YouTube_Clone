@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
+import { useContext } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+import AuthContext from '../../context/AuthContext';
 import './Comment.css';
 
 const CommentForm = (props) => {
      
     const [text, setText] = useState('');
+    const { user } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -21,7 +26,11 @@ const CommentForm = (props) => {
                     <input type="text" value={text} className="input-comment" placeholder="Add a Comment" onChange={(event) => setText(event.target.value)}/>
                 </div>
                 <div>
-                    <button type="submit" className="button-comment">Add</button>
+                    {user ? (
+                        <button type="submit" className="button-comment">Add</button>
+                    ) : (
+                        <button onClick={() => navigate("/login")} className="button-comment">Login</button>
+                    )}
                 </div>
             </form>
         </div>

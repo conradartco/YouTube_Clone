@@ -15,7 +15,7 @@ const VideoPage = (props) => {
     const {videoId} = useParams()
     const [video, setVideo] = useState([]);
     const [user, token] = useAuth();
-    const [reRender, setReRender] = useState(false);
+    const [reRender, setReRender] = useState(true);
 
     useEffect(() => {
         const fetchVideos = async () => {

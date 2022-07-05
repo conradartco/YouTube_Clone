@@ -33,3 +33,12 @@ def user_edit_comment(request, pk):
         return Response(serializer.data)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+@api_view(['PATCH'])
+@permission_classes([IsAuthenticated])
+def user_like_counter(request, pk):
+    comment = get_object_or_404(Comment.likes, pk=pk)
+    serializer = CommentSerializer(comment, data= (request.data + 1))
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data)
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

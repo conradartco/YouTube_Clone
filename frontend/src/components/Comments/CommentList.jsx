@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Comment from './Comment';
+import Reply from './Replies/Reply';
 import './Comment.css';
 
 const CommentList = (props) => {
 
-    const [comments, setComments] = useState([])
+    const [comments, setComments] = useState([]);
 
     useEffect(() => {
         const fetchComments = async () => {
@@ -21,7 +22,7 @@ const CommentList = (props) => {
 
     return (
         <div className='comment-list'>
-            <Comment commentContent={comments}/>
+            <Comment commentContent={comments} reRender={props.reRender}/>
         </div>
     );
 }
